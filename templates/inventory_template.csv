@@ -1,0 +1,3 @@
+item_name,quantity,unit,unit_price,min_stock_level
+"Sample Item 1",100,pcs,10.50,20
+"Sample Item 2",50,boxes,25.75,10 

@@ -249,7 +249,7 @@ usch/
 ## 📄 License & Credits
 
 ### License
-This project is proprietary software developed for USTP.
+This project is made for Fundamentals of Database Systems Final Project.
 All rights reserved © 2024
 
 ### Credits
@@ -257,10 +257,3 @@ All rights reserved © 2024
 - jQuery 3.6.0
 - DataTables 1.11.5
 - Font Awesome 6.0.0
-
-## 📞 Support & Contact
-
-For technical support or queries:
-- Email: support@ustp.edu.ph
-- System Administrator: admin@ustp.edu.ph
-- Emergency Contact: +63 XXX XXX XXXX 

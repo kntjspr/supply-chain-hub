@@ -12,13 +12,14 @@ A comprehensive supply chain management system designed for USTP (University of 
 - Department-specific views and permissions
 - User activity logging and audit trails
 
+![image](https://github.com/user-attachments/assets/4eadd2f9-718c-4d16-bf0e-74c359afa35e)
+
 ### Inventory Management
 - Real-time stock tracking and monitoring
 - Low stock alerts and notifications
 - Item categorization and status tracking
 - Batch import/export functionality
 - Expiry date tracking and alerts
-![image](https://github.com/user-attachments/assets/4eadd2f9-718c-4d16-bf0e-74c359afa35e)
 
 ### Supply Request Module
 - Department-based supply requisitions
@@ -146,8 +147,7 @@ usch/
 │   ├── updates.sql   # Database updates
 │   └── notifications.sql # Notification schema
 ├── templates/        # CSV templates
-├── logs/            # System logs
-└── cursor_docs/     # Documentation
+└──logs/            # System logs
 ```
 
 ## 🔄 Database Schema

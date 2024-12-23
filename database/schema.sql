@@ -122,4 +122,20 @@ CREATE TABLE IF NOT EXISTS audit_logs (
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- Create request_logs table
+CREATE TABLE IF NOT EXISTS request_logs (
+    log_id INT PRIMARY KEY AUTO_INCREMENT,
+    request_id INT,
+    item_id INT,
+    quantity INT,
+    department_id INT,
+    approval_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (request_id) REFERENCES supply_requests(request_id),
+    FOREIGN KEY (item_id) REFERENCES inventory(item_id),
+    FOREIGN KEY (department_id) REFERENCES departments(department_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Create trigger for approved requests (this will be created separately)
+-- Note: The trigger creation has been moved to a separate SQL file
+
 -- No default users will be created here, as they will be created through the installer

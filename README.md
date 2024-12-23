@@ -2,8 +2,6 @@
 
 A comprehensive supply chain management system designed for USTP (University of Science and Technology of Southern Philippines) to streamline inventory management, supply requests, procurement processes, and asset tracking.
 
-![image](https://github.com/user-attachments/assets/82f0fb6d-f4d2-42c4-b9bd-5a8294904f12)
-
 ## 🌟 Key Features
 
 ### User Management & Access Control
@@ -11,8 +9,6 @@ A comprehensive supply chain management system designed for USTP (University of 
 - Secure authentication with password hashing
 - Department-specific views and permissions
 - User activity logging and audit trails
-
-![image](https://github.com/user-attachments/assets/4eadd2f9-718c-4d16-bf0e-74c359afa35e)
 
 ### Inventory Management
 - Real-time stock tracking and monitoring
@@ -84,8 +80,15 @@ CREATE DATABASE IF NOT EXISTS usch_db;
    cd usch
    ```
 
-2. Install to XAMPP:
-   - Move cloned repository directory to htdocs folder
+2. Configure database connection:
+   - Rename `includes/config.sample.php` to `includes/config.php`
+   - Update database credentials:
+   ```php
+   define('DB_HOST', 'localhost');
+   define('DB_NAME', 'usch_db');
+   define('DB_USER', 'your_username');
+   define('DB_PASS', 'your_password');
+   ```
 
 3. Set up the application:
    - Visit: `http://localhost/usch/install.php`
@@ -147,7 +150,8 @@ usch/
 │   ├── updates.sql   # Database updates
 │   └── notifications.sql # Notification schema
 ├── templates/        # CSV templates
-└──logs/            # System logs
+├── logs/            # System logs
+└── cursor_docs/     # Documentation
 ```
 
 ## 🔄 Database Schema
@@ -249,7 +253,7 @@ usch/
 ## 📄 License & Credits
 
 ### License
-This project is made for Fundamentals of Database Systems Final Project.
+This project is proprietary software developed for USTP.
 All rights reserved © 2024
 
 ### Credits
@@ -257,3 +261,10 @@ All rights reserved © 2024
 - jQuery 3.6.0
 - DataTables 1.11.5
 - Font Awesome 6.0.0
+
+## 📞 Support & Contact
+
+For technical support or queries:
+- Email: support@ustp.edu.ph
+- System Administrator: admin@ustp.edu.ph
+- Emergency Contact: +63 XXX XXX XXXX 

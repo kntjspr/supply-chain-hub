@@ -288,30 +288,42 @@ try {
                                         <tbody>
                                             <?php foreach ($audit_logs as $log): ?>
                                             <tr>
-                                                <td><?php echo date('Y-m-d H:i:s', strtotime($log['timestamp'])); ?></td>
+                                                <td><?php echo format_date($log['timestamp']); ?></td>
                                                 <td><?php echo sanitize_output($log['user_name']); ?></td>
                                                 <td><?php echo sanitize_output($log['action']); ?></td>
                                                 <td><?php echo sanitize_output($log['table_name']); ?></td>
                                                 <td><?php echo sanitize_output($log['record_id']); ?></td>
                                                 <td>
-                                                    <?php 
-                                                    if ($log['old_values']) {
+                                                    <?php if ($log['old_values']): ?>
+                                                        <?php 
                                                         $old_values = json_decode($log['old_values'], true);
-                                                        foreach ($old_values as $key => $value) {
-                                                            echo sanitize_output("$key: $value") . "<br>";
-                                                        }
-                                                    }
-                                                    ?>
+                                                        if (is_array($old_values)): 
+                                                        ?>
+                                                        <ul class="list-unstyled mb-0">
+                                                            <?php foreach ($old_values as $key => $value): ?>
+                                                                <li><strong><?php echo htmlspecialchars($key); ?>:</strong> <?php echo htmlspecialchars($value); ?></li>
+                                                            <?php endforeach; ?>
+                                                        </ul>
+                                                        <?php else: ?>
+                                                            <?php echo htmlspecialchars($log['old_values']); ?>
+                                                        <?php endif; ?>
+                                                    <?php endif; ?>
                                                 </td>
                                                 <td>
-                                                    <?php 
-                                                    if ($log['new_values']) {
+                                                    <?php if ($log['new_values']): ?>
+                                                        <?php 
                                                         $new_values = json_decode($log['new_values'], true);
-                                                        foreach ($new_values as $key => $value) {
-                                                            echo sanitize_output("$key: $value") . "<br>";
-                                                        }
-                                                    }
-                                                    ?>
+                                                        if (is_array($new_values)): 
+                                                        ?>
+                                                        <ul class="list-unstyled mb-0">
+                                                            <?php foreach ($new_values as $key => $value): ?>
+                                                                <li><strong><?php echo htmlspecialchars($key); ?>:</strong> <?php echo htmlspecialchars($value); ?></li>
+                                                            <?php endforeach; ?>
+                                                        </ul>
+                                                        <?php else: ?>
+                                                            <?php echo htmlspecialchars($log['new_values']); ?>
+                                                        <?php endif; ?>
+                                                    <?php endif; ?>
                                                 </td>
                                             </tr>
                                             <?php endforeach; ?>
